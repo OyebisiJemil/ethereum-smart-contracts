@@ -1,10 +1,14 @@
 //SDPX-License-Identifier: GPL-3.0
-
 pragma solidity >=0.4.16 <0.9.0;
  
  contract ERC20Token{
+     string name;
      mapping(address => uint256) public balances;
      
+     constructor(string memory _name) public {
+         name = _name;
+     }
+
      function mint() public virtual {
          balances[tx.origin]++;
      }
